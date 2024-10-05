@@ -3,12 +3,9 @@
 #Nome que vai aparecer nas opções de pipe
 name: 'Execução Agendada'
 
-#Triggers ou gatilhos de execução 
-  #gatilho de exec manual * workflow_dispacth
-
 on:
   schedule:
-    - cron: '55 13 * * *' #regra de agendamento de execução
+   - cron: '10 20 * * *'
     
     #cron POSIX a b c d e 
     # a -> minuto
@@ -18,21 +15,11 @@ on:
     # e -> dias da semana
 
 jobs:
-  #descrição do jobs
   e2e-testes:
-    #máquina que o job vai executar
     runs-on: ['ubuntu-latest']
-
-    #passo a passo das ações do job
     steps:
       
       - uses: actions/checkout@v4
-      # - uses: actions/setup-node@v4
-      #   with:
-      #     node-version: lts/*  #lts/* = última versão estável
-      # - uses: szenius/set-timezone@v2.0
-      #   with:
-      #     timezoneLinux: "America/Sao_Paulo" #seta a forma UTC de horário, mas tem que colocar sempre como menos 3h da hora atual
 
       - name: Instalando Yarn
         run: npm install -g yarn
@@ -47,10 +34,7 @@ jobs:
         run: yarn run e2e
 
       - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }} #expressão para passar se for diferente de cancelado
+        if: ${{ !cancelled() }} 
         with:
           name: tests_reports
-          path: ./playwright-report #caminho onde fica o relatório
-
-          #Expressão serve para independente de se acontecer algo ruim no passo anterior que 
-          # o passo que tenha a expressão execute normalmente
+          path: ./playwright-report 
