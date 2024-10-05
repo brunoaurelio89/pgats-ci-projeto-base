@@ -19,6 +19,8 @@ on:
     # e -> dias da semana
 
 
+
+
 jobs:
   #descrição do jobs
   e2e-testes:
@@ -32,6 +34,9 @@ jobs:
       # - uses: actions/setup-node@v4
       #   with:
       #     node-version: lts/*  #lts/* = última versão estável
+      - uses: szenius/set-timezone@v2.0
+        with:
+          timezoneLinux: "America/Sao_Paulo"
 
       - name: Instalando Yarn
         run: npm install -g yarn
