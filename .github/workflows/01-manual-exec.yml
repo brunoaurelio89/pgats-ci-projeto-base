@@ -25,7 +25,7 @@ jobs:
       #     node-version: lts/*  #lts/* = última versão estável
 
       - name: Instalando Yarn
-        run: nm install -g yarn
+        run: npm install -g yarn
 
       - name: Instalando dependencies
         run: yarn
