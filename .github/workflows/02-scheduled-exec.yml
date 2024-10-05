@@ -8,7 +8,7 @@ name: 'Execução Agendada'
 
 on:
   schedule:
-    - cron: '46 19 * * 6' #regra de agendamento de execução
+    - cron: '47 19 * * 6' #regra de agendamento de execução
     
 
     #cron POSIX a b c d e 
@@ -34,9 +34,9 @@ jobs:
       # - uses: actions/setup-node@v4
       #   with:
       #     node-version: lts/*  #lts/* = última versão estável
-      - uses: szenius/set-timezone@v2.0
-        with:
-          timezoneLinux: "America/Sao_Paulo" #seta a forma UTC de horário, mas tem que colocar sempre como menos 3h da hora atual
+      # - uses: szenius/set-timezone@v2.0
+      #   with:
+      #     timezoneLinux: "America/Sao_Paulo" #seta a forma UTC de horário, mas tem que colocar sempre como menos 3h da hora atual
 
       - name: Instalando Yarn
         run: npm install -g yarn
