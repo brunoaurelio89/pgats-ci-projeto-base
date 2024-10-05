@@ -10,16 +10,12 @@ on:
   schedule:
     - cron: '55 13 * * *' #regra de agendamento de execução
     
-
     #cron POSIX a b c d e 
     # a -> minuto
     # b -> hora
     # c -> dias do mês
     # d -> meses do ano 
     # e -> dias da semana
-
-
-
 
 jobs:
   #descrição do jobs
