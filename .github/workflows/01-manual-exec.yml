@@ -39,4 +39,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: tests_reports
-          path:./playwright-report #caminho onde fica o relatório
+          path: ./playwright-report #caminho onde fica o relatório
