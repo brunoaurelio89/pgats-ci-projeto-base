@@ -2,11 +2,13 @@
 
 name: 'Execução por Deploy'
 
-on:
+on: # Só vai rodar por deploy depois rodar o execução manual
   workflow_run:
     workflows: ['Execução Manual']
     types:
       - completed
+      
+if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
 jobs:
 
