@@ -1,4 +1,4 @@
-#CI Nível 01 - Disparo manual a partir de um click
+#CI Nível 02 - Disparo de forma automática
 
 #Nome que vai aparecer nas opções de pipe
 name: 'Execução Agendada'
@@ -8,7 +8,7 @@ name: 'Execução Agendada'
 
 on:
   schedule:
-    - cron: '50 13 * * 6' #regra de agendamento de execução
+    - cron: '55 13 * * *' #regra de agendamento de execução
     
 
     #cron POSIX a b c d e 
