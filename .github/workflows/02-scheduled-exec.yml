@@ -1,13 +1,22 @@
 #CI Nível 01 - Disparo manual a partir de um click
 
 #Nome que vai aparecer nas opções de pipe
-name: 'Execução Manual'
+name: 'Execução Agendada'
 
 #Triggers ou gatilhos de execução 
   #gatilho de exec manual * workflow_dispacth
 
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: '33 13 * * *' #regra de agendamento de execução
+    
+
+    #cron POSIX a b c d e 
+    # a -> minuto
+    # b -> hora
+    # c -> dias do mês
+    # d -> meses do ano 
+    # e -> dias da semana
 
 
 jobs:
