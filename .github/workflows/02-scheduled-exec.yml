@@ -1,24 +1,15 @@
 #CI Nível 02 - Disparo de forma automática
 
-#Nome que vai aparecer nas opções de pipe
 name: 'Execução Agendada'
 
 on:
   schedule:
-   - cron: '10 20 * * *'
-    
-    #cron POSIX a b c d e 
-    # a -> minuto
-    # b -> hora
-    # c -> dias do mês
-    # d -> meses do ano 
-    # e -> dias da semana
+   - cron: '13 20 * * *'
 
 jobs:
   e2e-testes:
-    runs-on: ['ubuntu-latest']
+    runs-on: ubuntu-latest
     steps:
-      
       - uses: actions/checkout@v4
 
       - name: Instalando Yarn
