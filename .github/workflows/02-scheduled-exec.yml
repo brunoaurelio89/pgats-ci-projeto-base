@@ -4,7 +4,7 @@ name: 'Execução Agendada'
 
 on:
   schedule:
-   - cron: '19 * * *'
+    - cron: '19 * * *'
 
 jobs:
   e2e-testes:
@@ -25,7 +25,7 @@ jobs:
         run: yarn run e2e
 
       - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }} 
+        if: ${{ !cancelled() }}
         with:
           name: tests_reports
-          path: ./playwright-report 
+          path: ./playwright-report

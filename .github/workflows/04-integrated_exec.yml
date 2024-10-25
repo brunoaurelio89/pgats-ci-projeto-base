@@ -5,7 +5,6 @@ name: 'Execução Integrada'
 on:
   workflow_dispatch:
 
-
 jobs:
   inspection:
     runs-on: ubuntu-latest
@@ -18,17 +17,14 @@ jobs:
 
       - name: Instalando dependencies
         run: yarn
-        
+
       - name: Lint / Prettier (Padronização de Código)
         run: yarn lint
-        
+
   e2e-testes:
- 
     runs-on: ['ubuntu-latest']
 
- 
     steps:
-      
       - uses: actions/checkout@v4
 
       - name: Instalando Yarn
@@ -44,7 +40,7 @@ jobs:
         run: yarn run e2e
 
       - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }} 
+        if: ${{ !cancelled() }}
         with:
           name: tests_reports
-          path: ./playwright-report 
+          path: ./playwright-report
