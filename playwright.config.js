@@ -28,8 +28,9 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://pgats-ci-example.netlify.app',
-
+    baseURL: process.env.URL || 'https://pgats-ci-example.netlify.app',
+    /* se tiver parametrizado uma URL ele pega dai senão ele pega a fixa*/
+     
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
