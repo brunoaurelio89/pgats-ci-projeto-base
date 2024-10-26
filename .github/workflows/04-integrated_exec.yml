@@ -21,6 +21,21 @@ jobs:
       - name: Lint / Prettier (Padronização de Código)
         run: yarn lint
 
+    unit:
+      runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalando Yarn
+        run: npm install -g yarn
+
+      - name: Instalando dependencies
+        run: yarn
+
+      - name: Testes de Unidade
+        run: yarn run test
+
   e2e-testes:
     runs-on: ['ubuntu-latest']
 
